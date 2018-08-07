@@ -1,0 +1,371 @@
+*** RR Simulator ***
+Enter configuration file name: config.cfg
+Enter slice time: 300
+Enter cost of system call: 1
+Enter cost of context switch: 3
+Enter trace level: 11
+Time: 0000000000 Kernel: SysCall(MAKE_DEVICE, id=1,name="disk")
+Time: 0000000001 Kernel: SysCall(MAKE_DEVICE, id=2,name="disk")
+Time: 0000000002 Kernel: SysCall(MAKE_DEVICE, id=3,name="disk")
+Time: 0000000000 Kernel: SysCall(EXECVE, name="thumbBal1.prg")
+Time: 0000000001 Kernel: Context Switch {Idle}, process(pid=1, state=READY, name="thumbBal1.prg")).
+Time: 0000000004 Kernel: SysCall(EXECVE, name="thumbIO2.prg")
+Time: 0000000005 Kernel: SysCall(EXECVE, name="thumbBal2.prg")
+Time: 0000000006 Kernel: SysCall(EXECVE, name="thumbIO1.prg")
+Time: 0000000007 Kernel: SysCall(EXECVE, name="thumbCPU3.prg")
+Time: 0000000008 Kernel: SysCall(EXECVE, name="thumbCPU2.prg")
+Time: 0000000009 Kernel: SysCall(EXECVE, name="thumbCPU1.prg")
+Time: 0000000304 Kernel: Interrupt(TIME_OUT, process(pid=1, state=RUNNING, name="thumbBal1.prg"))
+Time: 0000000305 Kernel: Context Switch process(pid=1, state=READY, name="thumbBal1.prg"), process(pid=2, state=READY, name="thumbIO2.prg")).
+Time: 0000000309 Kernel: SysCall(IO_REQUEST, device(id=2), duration=1538, process(pid=2, state=RUNNING, name="thumbIO2.prg"))
+Time: 0000000310 Kernel: Context Switch process(pid=2, state=WAITING, name="thumbIO2.prg"), process(pid=3, state=READY, name="thumbBal2.prg")).
+Time: 0000000613 Kernel: Interrupt(TIME_OUT, process(pid=3, state=RUNNING, name="thumbBal2.prg"))
+Time: 0000000614 Kernel: Context Switch process(pid=3, state=READY, name="thumbBal2.prg"), process(pid=4, state=READY, name="thumbIO1.prg")).
+Time: 0000000917 Kernel: SysCall(IO_REQUEST, device(id=2), duration=4616, process(pid=4, state=RUNNING, name="thumbIO1.prg"))
+Time: 0000000918 Kernel: Context Switch process(pid=4, state=WAITING, name="thumbIO1.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000001221 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000001222 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000001525 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000001526 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=7, state=READY, name="thumbCPU1.prg")).
+Time: 0000001829 Kernel: Interrupt(TIME_OUT, process(pid=7, state=RUNNING, name="thumbCPU1.prg"))
+Time: 0000001830 Kernel: Context Switch process(pid=7, state=READY, name="thumbCPU1.prg"), process(pid=1, state=READY, name="thumbBal1.prg")).
+Time: 0000001848 Kernel: Interrupt(WAKE_UP, device(id=2), process(pid=2, state=WAITING, name="thumbIO2.prg"))
+Time: 0000002133 Kernel: Interrupt(TIME_OUT, process(pid=1, state=RUNNING, name="thumbBal1.prg"))
+Time: 0000002134 Kernel: Context Switch process(pid=1, state=READY, name="thumbBal1.prg"), process(pid=3, state=READY, name="thumbBal2.prg")).
+Time: 0000002437 Kernel: Interrupt(TIME_OUT, process(pid=3, state=RUNNING, name="thumbBal2.prg"))
+Time: 0000002438 Kernel: Context Switch process(pid=3, state=READY, name="thumbBal2.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000002741 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000002742 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000003045 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000003046 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=7, state=READY, name="thumbCPU1.prg")).
+Time: 0000003349 Kernel: Interrupt(TIME_OUT, process(pid=7, state=RUNNING, name="thumbCPU1.prg"))
+Time: 0000003350 Kernel: Context Switch process(pid=7, state=READY, name="thumbCPU1.prg"), process(pid=2, state=READY, name="thumbIO2.prg")).
+Time: 0000003356 Kernel: SysCall(IO_REQUEST, device(id=1), duration=4247, process(pid=2, state=RUNNING, name="thumbIO2.prg"))
+Time: 0000003357 Kernel: Context Switch process(pid=2, state=WAITING, name="thumbIO2.prg"), process(pid=1, state=READY, name="thumbBal1.prg")).
+Time: 0000003660 Kernel: Interrupt(TIME_OUT, process(pid=1, state=RUNNING, name="thumbBal1.prg"))
+Time: 0000003661 Kernel: Context Switch process(pid=1, state=READY, name="thumbBal1.prg"), process(pid=3, state=READY, name="thumbBal2.prg")).
+Time: 0000003869 Kernel: SysCall(IO_REQUEST, device(id=2), duration=824, process(pid=3, state=RUNNING, name="thumbBal2.prg"))
+Time: 0000003870 Kernel: Context Switch process(pid=3, state=WAITING, name="thumbBal2.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000004173 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000004174 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000004477 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000004478 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=7, state=READY, name="thumbCPU1.prg")).
+Time: 0000004781 Kernel: Interrupt(TIME_OUT, process(pid=7, state=RUNNING, name="thumbCPU1.prg"))
+Time: 0000004782 Kernel: Context Switch process(pid=7, state=READY, name="thumbCPU1.prg"), process(pid=1, state=READY, name="thumbBal1.prg")).
+Time: 0000004992 Kernel: SysCall(IO_REQUEST, device(id=3), duration=573, process(pid=1, state=RUNNING, name="thumbBal1.prg"))
+Time: 0000004993 Kernel: Context Switch process(pid=1, state=WAITING, name="thumbBal1.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000005296 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000005297 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000005566 Kernel: Interrupt(WAKE_UP, device(id=3), process(pid=1, state=WAITING, name="thumbBal1.prg"))
+Time: 0000005600 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000005601 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=7, state=READY, name="thumbCPU1.prg")).
+Time: 0000005788 Kernel: SysCall(IO_REQUEST, device(id=3), duration=1, process(pid=7, state=RUNNING, name="thumbCPU1.prg"))
+Time: 0000005789 Kernel: Context Switch process(pid=7, state=WAITING, name="thumbCPU1.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000005792 Kernel: Interrupt(WAKE_UP, device(id=3), process(pid=7, state=WAITING, name="thumbCPU1.prg"))
+Time: 0000006092 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000006093 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=1, state=READY, name="thumbBal1.prg")).
+Time: 0000006396 Kernel: Interrupt(TIME_OUT, process(pid=1, state=RUNNING, name="thumbBal1.prg"))
+Time: 0000006397 Kernel: Context Switch process(pid=1, state=READY, name="thumbBal1.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000006464 Kernel: Interrupt(WAKE_UP, device(id=2), process(pid=4, state=WAITING, name="thumbIO1.prg"))
+Time: 0000006700 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000006701 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=7, state=READY, name="thumbCPU1.prg")).
+Time: 0000007004 Kernel: Interrupt(TIME_OUT, process(pid=7, state=RUNNING, name="thumbCPU1.prg"))
+Time: 0000007005 Kernel: Context Switch process(pid=7, state=READY, name="thumbCPU1.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000007288 Kernel: Interrupt(WAKE_UP, device(id=2), process(pid=3, state=WAITING, name="thumbBal2.prg"))
+Time: 0000007308 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000007309 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=1, state=READY, name="thumbBal1.prg")).
+Time: 0000007604 Kernel: Interrupt(WAKE_UP, device(id=1), process(pid=2, state=WAITING, name="thumbIO2.prg"))
+Time: 0000007612 Kernel: Interrupt(TIME_OUT, process(pid=1, state=RUNNING, name="thumbBal1.prg"))
+Time: 0000007613 Kernel: Context Switch process(pid=1, state=READY, name="thumbBal1.prg"), process(pid=4, state=READY, name="thumbIO1.prg")).
+Time: 0000007916 Kernel: Interrupt(TIME_OUT, process(pid=4, state=RUNNING, name="thumbIO1.prg"))
+Time: 0000007917 Kernel: Context Switch process(pid=4, state=READY, name="thumbIO1.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000008220 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000008221 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=7, state=READY, name="thumbCPU1.prg")).
+Time: 0000008524 Kernel: Interrupt(TIME_OUT, process(pid=7, state=RUNNING, name="thumbCPU1.prg"))
+Time: 0000008525 Kernel: Context Switch process(pid=7, state=READY, name="thumbCPU1.prg"), process(pid=3, state=READY, name="thumbBal2.prg")).
+Time: 0000008828 Kernel: Interrupt(TIME_OUT, process(pid=3, state=RUNNING, name="thumbBal2.prg"))
+Time: 0000008829 Kernel: Context Switch process(pid=3, state=READY, name="thumbBal2.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000009132 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000009133 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=2, state=READY, name="thumbIO2.prg")).
+Time: 0000009138 Kernel: SysCall(IO_REQUEST, device(id=3), duration=3266, process(pid=2, state=RUNNING, name="thumbIO2.prg"))
+Time: 0000009139 Kernel: Context Switch process(pid=2, state=WAITING, name="thumbIO2.prg"), process(pid=1, state=READY, name="thumbBal1.prg")).
+Time: 0000009442 Kernel: Interrupt(TIME_OUT, process(pid=1, state=RUNNING, name="thumbBal1.prg"))
+Time: 0000009443 Kernel: Context Switch process(pid=1, state=READY, name="thumbBal1.prg"), process(pid=4, state=READY, name="thumbIO1.prg")).
+Time: 0000009496 Kernel: SysCall(IO_REQUEST, device(id=2), duration=2159, process(pid=4, state=RUNNING, name="thumbIO1.prg"))
+Time: 0000009497 Kernel: Context Switch process(pid=4, state=WAITING, name="thumbIO1.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000009800 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000009801 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=7, state=READY, name="thumbCPU1.prg")).
+Time: 0000010104 Kernel: Interrupt(TIME_OUT, process(pid=7, state=RUNNING, name="thumbCPU1.prg"))
+Time: 0000010105 Kernel: Context Switch process(pid=7, state=READY, name="thumbCPU1.prg"), process(pid=3, state=READY, name="thumbBal2.prg")).
+Time: 0000010408 Kernel: Interrupt(TIME_OUT, process(pid=3, state=RUNNING, name="thumbBal2.prg"))
+Time: 0000010409 Kernel: Context Switch process(pid=3, state=READY, name="thumbBal2.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000010712 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000010713 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=1, state=READY, name="thumbBal1.prg")).
+Time: 0000011016 Kernel: Interrupt(TIME_OUT, process(pid=1, state=RUNNING, name="thumbBal1.prg"))
+Time: 0000011017 Kernel: Context Switch process(pid=1, state=READY, name="thumbBal1.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000011320 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000011321 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=7, state=READY, name="thumbCPU1.prg")).
+Time: 0000011624 Kernel: Interrupt(TIME_OUT, process(pid=7, state=RUNNING, name="thumbCPU1.prg"))
+Time: 0000011625 Kernel: Context Switch process(pid=7, state=READY, name="thumbCPU1.prg"), process(pid=3, state=READY, name="thumbBal2.prg")).
+Time: 0000011656 Kernel: Interrupt(WAKE_UP, device(id=2), process(pid=4, state=WAITING, name="thumbIO1.prg"))
+Time: 0000011928 Kernel: Interrupt(TIME_OUT, process(pid=3, state=RUNNING, name="thumbBal2.prg"))
+Time: 0000011929 Kernel: Context Switch process(pid=3, state=READY, name="thumbBal2.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000012232 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000012233 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=1, state=READY, name="thumbBal1.prg")).
+Time: 0000012405 Kernel: Interrupt(WAKE_UP, device(id=3), process(pid=2, state=WAITING, name="thumbIO2.prg"))
+Time: 0000012536 Kernel: Interrupt(TIME_OUT, process(pid=1, state=RUNNING, name="thumbBal1.prg"))
+Time: 0000012537 Kernel: Context Switch process(pid=1, state=READY, name="thumbBal1.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000012642 Kernel: SysCall(IO_REQUEST, device(id=2), duration=5, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000012643 Kernel: Context Switch process(pid=6, state=WAITING, name="thumbCPU2.prg"), process(pid=7, state=READY, name="thumbCPU1.prg")).
+Time: 0000012648 Kernel: Interrupt(WAKE_UP, device(id=2), process(pid=6, state=WAITING, name="thumbCPU2.prg"))
+Time: 0000012946 Kernel: Interrupt(TIME_OUT, process(pid=7, state=RUNNING, name="thumbCPU1.prg"))
+Time: 0000012947 Kernel: Context Switch process(pid=7, state=READY, name="thumbCPU1.prg"), process(pid=4, state=READY, name="thumbIO1.prg")).
+Time: 0000013250 Kernel: Interrupt(TIME_OUT, process(pid=4, state=RUNNING, name="thumbIO1.prg"))
+Time: 0000013251 Kernel: Context Switch process(pid=4, state=READY, name="thumbIO1.prg"), process(pid=3, state=READY, name="thumbBal2.prg")).
+Time: 0000013377 Kernel: SysCall(IO_REQUEST, device(id=2), duration=643, process(pid=3, state=RUNNING, name="thumbBal2.prg"))
+Time: 0000013378 Kernel: Context Switch process(pid=3, state=WAITING, name="thumbBal2.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000013681 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000013682 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=2, state=READY, name="thumbIO2.prg")).
+Time: 0000013686 Kernel: SysCall(TERMINATE_PROCESS, process(pid=2, state=RUNNING, name="thumbIO2.prg"))
+Time: 0000013687 Kernel: Context Switch process(pid=2, state=TERMINATED, name="thumbIO2.prg"), process(pid=1, state=READY, name="thumbBal1.prg")).
+Time: 0000013990 Kernel: Interrupt(TIME_OUT, process(pid=1, state=RUNNING, name="thumbBal1.prg"))
+Time: 0000013991 Kernel: Context Switch process(pid=1, state=READY, name="thumbBal1.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000014021 Kernel: Interrupt(WAKE_UP, device(id=2), process(pid=3, state=WAITING, name="thumbBal2.prg"))
+Time: 0000014294 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000014295 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=7, state=READY, name="thumbCPU1.prg")).
+Time: 0000014598 Kernel: Interrupt(TIME_OUT, process(pid=7, state=RUNNING, name="thumbCPU1.prg"))
+Time: 0000014599 Kernel: Context Switch process(pid=7, state=READY, name="thumbCPU1.prg"), process(pid=4, state=READY, name="thumbIO1.prg")).
+Time: 0000014791 Kernel: SysCall(IO_REQUEST, device(id=2), duration=1201, process(pid=4, state=RUNNING, name="thumbIO1.prg"))
+Time: 0000014792 Kernel: Context Switch process(pid=4, state=WAITING, name="thumbIO1.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000015095 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000015096 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=1, state=READY, name="thumbBal1.prg")).
+Time: 0000015399 Kernel: Interrupt(TIME_OUT, process(pid=1, state=RUNNING, name="thumbBal1.prg"))
+Time: 0000015400 Kernel: Context Switch process(pid=1, state=READY, name="thumbBal1.prg"), process(pid=3, state=READY, name="thumbBal2.prg")).
+Time: 0000015703 Kernel: Interrupt(TIME_OUT, process(pid=3, state=RUNNING, name="thumbBal2.prg"))
+Time: 0000015704 Kernel: Context Switch process(pid=3, state=READY, name="thumbBal2.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000015993 Kernel: Interrupt(WAKE_UP, device(id=2), process(pid=4, state=WAITING, name="thumbIO1.prg"))
+Time: 0000016007 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000016008 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=7, state=READY, name="thumbCPU1.prg")).
+Time: 0000016311 Kernel: Interrupt(TIME_OUT, process(pid=7, state=RUNNING, name="thumbCPU1.prg"))
+Time: 0000016312 Kernel: Context Switch process(pid=7, state=READY, name="thumbCPU1.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000016615 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000016616 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=1, state=READY, name="thumbBal1.prg")).
+Time: 0000016919 Kernel: Interrupt(TIME_OUT, process(pid=1, state=RUNNING, name="thumbBal1.prg"))
+Time: 0000016920 Kernel: Context Switch process(pid=1, state=READY, name="thumbBal1.prg"), process(pid=3, state=READY, name="thumbBal2.prg")).
+Time: 0000017223 Kernel: Interrupt(TIME_OUT, process(pid=3, state=RUNNING, name="thumbBal2.prg"))
+Time: 0000017224 Kernel: Context Switch process(pid=3, state=READY, name="thumbBal2.prg"), process(pid=4, state=READY, name="thumbIO1.prg")).
+Time: 0000017527 Kernel: Interrupt(TIME_OUT, process(pid=4, state=RUNNING, name="thumbIO1.prg"))
+Time: 0000017528 Kernel: Context Switch process(pid=4, state=READY, name="thumbIO1.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000017831 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000017832 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=7, state=READY, name="thumbCPU1.prg")).
+Time: 0000017963 Kernel: SysCall(IO_REQUEST, device(id=2), duration=1, process(pid=7, state=RUNNING, name="thumbCPU1.prg"))
+Time: 0000017964 Kernel: Context Switch process(pid=7, state=WAITING, name="thumbCPU1.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000017967 Kernel: Interrupt(WAKE_UP, device(id=2), process(pid=7, state=WAITING, name="thumbCPU1.prg"))
+Time: 0000018267 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000018268 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=1, state=READY, name="thumbBal1.prg")).
+Time: 0000018571 Kernel: Interrupt(TIME_OUT, process(pid=1, state=RUNNING, name="thumbBal1.prg"))
+Time: 0000018572 Kernel: Context Switch process(pid=1, state=READY, name="thumbBal1.prg"), process(pid=3, state=READY, name="thumbBal2.prg")).
+Time: 0000018875 Kernel: Interrupt(TIME_OUT, process(pid=3, state=RUNNING, name="thumbBal2.prg"))
+Time: 0000018876 Kernel: Context Switch process(pid=3, state=READY, name="thumbBal2.prg"), process(pid=4, state=READY, name="thumbIO1.prg")).
+Time: 0000018924 Kernel: SysCall(TERMINATE_PROCESS, process(pid=4, state=RUNNING, name="thumbIO1.prg"))
+Time: 0000018925 Kernel: Context Switch process(pid=4, state=TERMINATED, name="thumbIO1.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000019228 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000019229 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=7, state=READY, name="thumbCPU1.prg")).
+Time: 0000019532 Kernel: Interrupt(TIME_OUT, process(pid=7, state=RUNNING, name="thumbCPU1.prg"))
+Time: 0000019533 Kernel: Context Switch process(pid=7, state=READY, name="thumbCPU1.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000019587 Kernel: SysCall(IO_REQUEST, device(id=2), duration=2, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000019588 Kernel: Context Switch process(pid=5, state=WAITING, name="thumbCPU3.prg"), process(pid=1, state=READY, name="thumbBal1.prg")).
+Time: 0000019591 Kernel: Interrupt(WAKE_UP, device(id=2), process(pid=5, state=WAITING, name="thumbCPU3.prg"))
+Time: 0000019891 Kernel: Interrupt(TIME_OUT, process(pid=1, state=RUNNING, name="thumbBal1.prg"))
+Time: 0000019892 Kernel: Context Switch process(pid=1, state=READY, name="thumbBal1.prg"), process(pid=3, state=READY, name="thumbBal2.prg")).
+Time: 0000020131 Kernel: SysCall(IO_REQUEST, device(id=1), duration=931, process(pid=3, state=RUNNING, name="thumbBal2.prg"))
+Time: 0000020132 Kernel: Context Switch process(pid=3, state=WAITING, name="thumbBal2.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000020435 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000020436 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=7, state=READY, name="thumbCPU1.prg")).
+Time: 0000020739 Kernel: Interrupt(TIME_OUT, process(pid=7, state=RUNNING, name="thumbCPU1.prg"))
+Time: 0000020740 Kernel: Context Switch process(pid=7, state=READY, name="thumbCPU1.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000021043 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000021044 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=1, state=READY, name="thumbBal1.prg")).
+Time: 0000021063 Kernel: Interrupt(WAKE_UP, device(id=1), process(pid=3, state=WAITING, name="thumbBal2.prg"))
+Time: 0000021347 Kernel: Interrupt(TIME_OUT, process(pid=1, state=RUNNING, name="thumbBal1.prg"))
+Time: 0000021348 Kernel: Context Switch process(pid=1, state=READY, name="thumbBal1.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000021651 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000021652 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=7, state=READY, name="thumbCPU1.prg")).
+Time: 0000021955 Kernel: Interrupt(TIME_OUT, process(pid=7, state=RUNNING, name="thumbCPU1.prg"))
+Time: 0000021956 Kernel: Context Switch process(pid=7, state=READY, name="thumbCPU1.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000022259 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000022260 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=3, state=READY, name="thumbBal2.prg")).
+Time: 0000022563 Kernel: Interrupt(TIME_OUT, process(pid=3, state=RUNNING, name="thumbBal2.prg"))
+Time: 0000022564 Kernel: Context Switch process(pid=3, state=READY, name="thumbBal2.prg"), process(pid=1, state=READY, name="thumbBal1.prg")).
+Time: 0000022823 Kernel: SysCall(IO_REQUEST, device(id=3), duration=778, process(pid=1, state=RUNNING, name="thumbBal1.prg"))
+Time: 0000022824 Kernel: Context Switch process(pid=1, state=WAITING, name="thumbBal1.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000023127 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000023128 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=7, state=READY, name="thumbCPU1.prg")).
+Time: 0000023431 Kernel: Interrupt(TIME_OUT, process(pid=7, state=RUNNING, name="thumbCPU1.prg"))
+Time: 0000023432 Kernel: Context Switch process(pid=7, state=READY, name="thumbCPU1.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000023602 Kernel: Interrupt(WAKE_UP, device(id=3), process(pid=1, state=WAITING, name="thumbBal1.prg"))
+Time: 0000023735 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000023736 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=3, state=READY, name="thumbBal2.prg")).
+Time: 0000024039 Kernel: Interrupt(TIME_OUT, process(pid=3, state=RUNNING, name="thumbBal2.prg"))
+Time: 0000024040 Kernel: Context Switch process(pid=3, state=READY, name="thumbBal2.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000024343 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000024344 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=7, state=READY, name="thumbCPU1.prg")).
+Time: 0000024647 Kernel: Interrupt(TIME_OUT, process(pid=7, state=RUNNING, name="thumbCPU1.prg"))
+Time: 0000024648 Kernel: Context Switch process(pid=7, state=READY, name="thumbCPU1.prg"), process(pid=1, state=READY, name="thumbBal1.prg")).
+Time: 0000024951 Kernel: Interrupt(TIME_OUT, process(pid=1, state=RUNNING, name="thumbBal1.prg"))
+Time: 0000024952 Kernel: Context Switch process(pid=1, state=READY, name="thumbBal1.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000025255 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000025256 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=3, state=READY, name="thumbBal2.prg")).
+Time: 0000025559 Kernel: Interrupt(TIME_OUT, process(pid=3, state=RUNNING, name="thumbBal2.prg"))
+Time: 0000025560 Kernel: Context Switch process(pid=3, state=READY, name="thumbBal2.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000025863 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000025864 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=7, state=READY, name="thumbCPU1.prg")).
+Time: 0000026167 Kernel: Interrupt(TIME_OUT, process(pid=7, state=RUNNING, name="thumbCPU1.prg"))
+Time: 0000026168 Kernel: Context Switch process(pid=7, state=READY, name="thumbCPU1.prg"), process(pid=1, state=READY, name="thumbBal1.prg")).
+Time: 0000026471 Kernel: Interrupt(TIME_OUT, process(pid=1, state=RUNNING, name="thumbBal1.prg"))
+Time: 0000026472 Kernel: Context Switch process(pid=1, state=READY, name="thumbBal1.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000026775 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000026776 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=3, state=READY, name="thumbBal2.prg")).
+Time: 0000027079 Kernel: Interrupt(TIME_OUT, process(pid=3, state=RUNNING, name="thumbBal2.prg"))
+Time: 0000027080 Kernel: Context Switch process(pid=3, state=READY, name="thumbBal2.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000027132 Kernel: SysCall(IO_REQUEST, device(id=3), duration=2, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000027133 Kernel: Context Switch process(pid=6, state=WAITING, name="thumbCPU2.prg"), process(pid=7, state=READY, name="thumbCPU1.prg")).
+Time: 0000027136 Kernel: Interrupt(WAKE_UP, device(id=3), process(pid=6, state=WAITING, name="thumbCPU2.prg"))
+Time: 0000027242 Kernel: SysCall(IO_REQUEST, device(id=3), duration=2, process(pid=7, state=RUNNING, name="thumbCPU1.prg"))
+Time: 0000027243 Kernel: Context Switch process(pid=7, state=WAITING, name="thumbCPU1.prg"), process(pid=1, state=READY, name="thumbBal1.prg")).
+Time: 0000027246 Kernel: Interrupt(WAKE_UP, device(id=3), process(pid=7, state=WAITING, name="thumbCPU1.prg"))
+Time: 0000027473 Kernel: SysCall(IO_REQUEST, device(id=3), duration=655, process(pid=1, state=RUNNING, name="thumbBal1.prg"))
+Time: 0000027474 Kernel: Context Switch process(pid=1, state=WAITING, name="thumbBal1.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000027777 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000027778 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=3, state=READY, name="thumbBal2.prg")).
+Time: 0000028081 Kernel: Interrupt(TIME_OUT, process(pid=3, state=RUNNING, name="thumbBal2.prg"))
+Time: 0000028082 Kernel: Context Switch process(pid=3, state=READY, name="thumbBal2.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000028129 Kernel: Interrupt(WAKE_UP, device(id=3), process(pid=1, state=WAITING, name="thumbBal1.prg"))
+Time: 0000028385 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000028386 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=7, state=READY, name="thumbCPU1.prg")).
+Time: 0000028689 Kernel: Interrupt(TIME_OUT, process(pid=7, state=RUNNING, name="thumbCPU1.prg"))
+Time: 0000028690 Kernel: Context Switch process(pid=7, state=READY, name="thumbCPU1.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000028919 Kernel: SysCall(IO_REQUEST, device(id=1), duration=1, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000028920 Kernel: Context Switch process(pid=5, state=WAITING, name="thumbCPU3.prg"), process(pid=3, state=READY, name="thumbBal2.prg")).
+Time: 0000028923 Kernel: Interrupt(WAKE_UP, device(id=1), process(pid=5, state=WAITING, name="thumbCPU3.prg"))
+Time: 0000029223 Kernel: Interrupt(TIME_OUT, process(pid=3, state=RUNNING, name="thumbBal2.prg"))
+Time: 0000029224 Kernel: Context Switch process(pid=3, state=READY, name="thumbBal2.prg"), process(pid=1, state=READY, name="thumbBal1.prg")).
+Time: 0000029527 Kernel: Interrupt(TIME_OUT, process(pid=1, state=RUNNING, name="thumbBal1.prg"))
+Time: 0000029528 Kernel: Context Switch process(pid=1, state=READY, name="thumbBal1.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000029831 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000029832 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=7, state=READY, name="thumbCPU1.prg")).
+Time: 0000030135 Kernel: Interrupt(TIME_OUT, process(pid=7, state=RUNNING, name="thumbCPU1.prg"))
+Time: 0000030136 Kernel: Context Switch process(pid=7, state=READY, name="thumbCPU1.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000030439 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000030440 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=3, state=READY, name="thumbBal2.prg")).
+Time: 0000030743 Kernel: Interrupt(TIME_OUT, process(pid=3, state=RUNNING, name="thumbBal2.prg"))
+Time: 0000030744 Kernel: Context Switch process(pid=3, state=READY, name="thumbBal2.prg"), process(pid=1, state=READY, name="thumbBal1.prg")).
+Time: 0000031047 Kernel: Interrupt(TIME_OUT, process(pid=1, state=RUNNING, name="thumbBal1.prg"))
+Time: 0000031048 Kernel: Context Switch process(pid=1, state=READY, name="thumbBal1.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000031351 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000031352 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=7, state=READY, name="thumbCPU1.prg")).
+Time: 0000031655 Kernel: Interrupt(TIME_OUT, process(pid=7, state=RUNNING, name="thumbCPU1.prg"))
+Time: 0000031656 Kernel: Context Switch process(pid=7, state=READY, name="thumbCPU1.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000031959 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000031960 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=3, state=READY, name="thumbBal2.prg")).
+Time: 0000032263 Kernel: Interrupt(TIME_OUT, process(pid=3, state=RUNNING, name="thumbBal2.prg"))
+Time: 0000032264 Kernel: Context Switch process(pid=3, state=READY, name="thumbBal2.prg"), process(pid=1, state=READY, name="thumbBal1.prg")).
+Time: 0000032356 Kernel: SysCall(TERMINATE_PROCESS, process(pid=1, state=RUNNING, name="thumbBal1.prg"))
+Time: 0000032357 Kernel: Context Switch process(pid=1, state=TERMINATED, name="thumbBal1.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000032660 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000032661 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=7, state=READY, name="thumbCPU1.prg")).
+Time: 0000032809 Kernel: SysCall(TERMINATE_PROCESS, process(pid=7, state=RUNNING, name="thumbCPU1.prg"))
+Time: 0000032810 Kernel: Context Switch process(pid=7, state=TERMINATED, name="thumbCPU1.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000033113 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000033114 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=3, state=READY, name="thumbBal2.prg")).
+Time: 0000033417 Kernel: Interrupt(TIME_OUT, process(pid=3, state=RUNNING, name="thumbBal2.prg"))
+Time: 0000033418 Kernel: Context Switch process(pid=3, state=READY, name="thumbBal2.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000033721 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000033722 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000034025 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000034026 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=3, state=READY, name="thumbBal2.prg")).
+Time: 0000034153 Kernel: SysCall(TERMINATE_PROCESS, process(pid=3, state=RUNNING, name="thumbBal2.prg"))
+Time: 0000034154 Kernel: Context Switch process(pid=3, state=TERMINATED, name="thumbBal2.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000034457 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000034458 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000034761 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000034762 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000035065 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000035066 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000035369 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000035370 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000035475 Kernel: SysCall(IO_REQUEST, device(id=1), duration=1, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000035476 Kernel: Context Switch process(pid=6, state=WAITING, name="thumbCPU2.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000035479 Kernel: Interrupt(WAKE_UP, device(id=1), process(pid=6, state=WAITING, name="thumbCPU2.prg"))
+Time: 0000035779 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000035780 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000036083 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000036084 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000036387 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000036388 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000036691 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000036692 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000036995 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000036996 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000037299 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000037300 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000037603 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000037604 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000037907 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000037908 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000038211 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000038212 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000038515 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000038516 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000038819 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000038820 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000039123 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000039124 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000039427 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000039428 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000039731 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000039732 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000040035 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000040036 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000040339 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000040340 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000040643 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000040644 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000040947 Kernel: Interrupt(TIME_OUT, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000040948 Kernel: Context Switch process(pid=6, state=READY, name="thumbCPU2.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000041251 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000041252 Kernel: Context Switch process(pid=5, state=READY, name="thumbCPU3.prg"), process(pid=6, state=READY, name="thumbCPU2.prg")).
+Time: 0000041376 Kernel: SysCall(TERMINATE_PROCESS, process(pid=6, state=RUNNING, name="thumbCPU2.prg"))
+Time: 0000041377 Kernel: Context Switch process(pid=6, state=TERMINATED, name="thumbCPU2.prg"), process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000041680 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000041681 Kernel: Context Switch process(pid=5, state=RUNNING, name="thumbCPU3.prg"), process(pid=5, state=RUNNING, name="thumbCPU3.prg")).
+Time: 0000041984 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000041985 Kernel: Context Switch process(pid=5, state=RUNNING, name="thumbCPU3.prg"), process(pid=5, state=RUNNING, name="thumbCPU3.prg")).
+Time: 0000041994 Kernel: SysCall(IO_REQUEST, device(id=2), duration=0, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000041995 Kernel: Context Switch process(pid=5, state=WAITING, name="thumbCPU3.prg"), {Idle}).
+Time: 0000041998 Kernel: Interrupt(WAKE_UP, device(id=2), process(pid=5, state=WAITING, name="thumbCPU3.prg"))
+Time: 0000041999 Kernel: Context Switch {Idle}, process(pid=5, state=READY, name="thumbCPU3.prg")).
+Time: 0000042302 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000042303 Kernel: Context Switch process(pid=5, state=RUNNING, name="thumbCPU3.prg"), process(pid=5, state=RUNNING, name="thumbCPU3.prg")).
+Time: 0000042606 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000042607 Kernel: Context Switch process(pid=5, state=RUNNING, name="thumbCPU3.prg"), process(pid=5, state=RUNNING, name="thumbCPU3.prg")).
+Time: 0000042910 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000042911 Kernel: Context Switch process(pid=5, state=RUNNING, name="thumbCPU3.prg"), process(pid=5, state=RUNNING, name="thumbCPU3.prg")).
+Time: 0000043214 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000043215 Kernel: Context Switch process(pid=5, state=RUNNING, name="thumbCPU3.prg"), process(pid=5, state=RUNNING, name="thumbCPU3.prg")).
+Time: 0000043518 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000043519 Kernel: Context Switch process(pid=5, state=RUNNING, name="thumbCPU3.prg"), process(pid=5, state=RUNNING, name="thumbCPU3.prg")).
+Time: 0000043822 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000043823 Kernel: Context Switch process(pid=5, state=RUNNING, name="thumbCPU3.prg"), process(pid=5, state=RUNNING, name="thumbCPU3.prg")).
+Time: 0000044126 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000044127 Kernel: Context Switch process(pid=5, state=RUNNING, name="thumbCPU3.prg"), process(pid=5, state=RUNNING, name="thumbCPU3.prg")).
+Time: 0000044430 Kernel: Interrupt(TIME_OUT, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000044431 Kernel: Context Switch process(pid=5, state=RUNNING, name="thumbCPU3.prg"), process(pid=5, state=RUNNING, name="thumbCPU3.prg")).
+Time: 0000044713 Kernel: SysCall(TERMINATE_PROCESS, process(pid=5, state=RUNNING, name="thumbCPU3.prg"))
+Time: 0000044714 Kernel: Context Switch process(pid=5, state=TERMINATED, name="thumbCPU3.prg"), {Idle}).
+System time: 44717
+Kernel time: 686
+User time: 44031
+Idle time: 0
+Context switches: 165
+CPU utilization: 98.47
